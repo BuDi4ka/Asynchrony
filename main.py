@@ -6,7 +6,6 @@ from datetime import datetime, timedelta
 API_URL = 'https://api.privatbank.ua/p24api/exchange_rates?date='
 DATE_NOW = datetime.now().date()
 
-
 async def fetch_rate(session, date):
     url = API_URL + date.strftime('%d.%m.%Y')
     try:
@@ -19,7 +18,6 @@ async def fetch_rate(session, date):
     except aiohttp.ClientError as e:
         print(f"Client error: {e}")
         return None
-
 
 async def main(days):
     if days > 10:
